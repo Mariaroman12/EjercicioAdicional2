@@ -156,8 +156,9 @@ public class Main {
 	
 	public void buscarSpare(int code) {
 		for (Component c : componentes.values()) {
+			if(c.haySpare(code)) {
 			System.out.println(c.buscaSpare(code));
-		}
+		}}
 	}
 	public void buscarComponent(int code) {
 		for (Component c : componentes.values()) {
