@@ -99,6 +99,8 @@ public class Main {
 		}
 	}	
 		
+	
+	
 
 	public void agregarSparePart(Scanner sc) {
 		System.out.println("Agregue el código del SparePart:");
@@ -179,14 +181,21 @@ public class Main {
         if (fileN.isEmpty()) {
             System.out.println("La ruta del archivo esta vacía");
             return;
-        }
+        }else {
         SparePart esto = ControladorFichero.importar(fileN);
-        if (esto != null && esto instanceof Component) {
-            componentes.put(esto.getCode(), (Component)esto);
-            System.out.println("Importación exitosa");
+        if (esto != null) {
+            if (esto instanceof Component) {
+                componentes.put(esto.getCode(), (Component) esto);
+            }
+            System.out.println("Exito en la importación");
             System.out.println(esto);
+        } else {
+            System.out.println("Error al importarlo");
+        	}
         }
       }
+    
+	
 	
 	// Añadir
 	public boolean addComponent(Component c) {
